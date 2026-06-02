@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>設備点検・清掃テストアプリ</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <h1>設備点検・清掃 テストアプリ</h1>
+      <p>まずは1台の機械で点検項目を確認し、OK/NG/SKIPを登録してみましょう。</p>
+    </header>
+
+    <section class="panel" id="statusPanel">
+      <div class="panel-title">ステータス</div>
+      <div class="status-row">
+        <div>日付:</div>
+        <div id="todayDate">読み込み中...</div>
+      </div>
+      <div class="status-row">
+        <div>デバイス:</div>
+        <div id="deviceName">読み込み中...</div>
+      </div>
+      <div class="status-row">
+        <div>チェック項目:</div>
+        <div id="itemCount">0</div>
+      </div>
+      <div class="status-row">
+        <div>完了:</div>
+        <div id="countOk">0</div>
+      </div>
+      <div class="status-row">
+        <div>NG:</div>
+        <div id="countNg">0</div>
+      </div>
+      <div class="status-row">
+        <div>SKIP:</div>
+        <div id="countSkip">0</div>
+      </div>
+      <div class="status-row inspector-row">
+        <div>担当者:</div>
+        <div>
+          <select id="inspectorName">
+            <option value="">-- 担当者を選択 --</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="resetPanel">
+      <div class="panel-title">テスト用</div>
+      <button id="resetButton" class="action-button action-reset">本日の記録をリセット</button>
+    </section>
+
+    <section class="panel" id="messagePanel">
+      <div class="panel-title">使い方</div>
+      <ul>
+        <li>設置済みのチェックリストを読み込みます。</li>
+        <li>各項目ごとに「OK」「NG」「SKIP」を登録できます。</li>
+        <li>進捗はブラウザの保存機能で一時的に保持されます。</li>
+      </ul>
+      <div id="appMessage" class="app-message"></div>
+      <div class="file-loader">
+        <label for="jsonFile">JSONファイルが読み込めない場合はここから選択してください:</label>
+        <input type="file" id="jsonFile" accept="application/json" />
+      </div>
+    </section>
+
+    <section class="panel" id="checkListPanel">
+      <div class="panel-title">チェック項目</div>
+      <div id="checkList">読み込み中...</div>
+      <div id="completionPanel" class="completion-panel hidden">
+        <div class="completion-message">本日の対象項目がすべて完了しました。</div>
+        <button id="finishButton" class="action-button action-ok">完了して締める</button>
+      </div>
+    </section>
+  </div>
+
+  <div id="finishedScreen" class="finished-screen hidden">
+    <div class="finished-box">
+      <div class="finished-title">本日の点検・清掃　完了</div>
+      <div class="finished-message">本日も1日お疲れ様でした。</div>
+      <div class="finished-summary" id="finishedSummary"></div>
+      <div class="finished-meta" id="finishedMeta"></div>
+      <button id="finishedBackButton" class="action-button action-ok" style="margin-top:24px;">戻る</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+:root {
+  color-scheme: light;
+  color: #1a1a1a;
+  background: #f2f4f7;
+  font-family: 'Segoe UI', Meiryo, system-ui, sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 16px;
+}
+.app-shell {
+  max-width: 980px;
+  margin: 0 auto;
+}
+.app-header {
+  padding: 20px 24px;
+  margin-bottom: 18px;
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #d8dde4;
+}
+.app-header h1 {
+  margin: 0 0 10px;
+  font-size: 1.8rem;
+}
+.app-header p {
+  margin: 0;
+  color: #555;
+}
+.panel {
+  background: #ffffff;
+  border: 1px solid #d8dde4;
+  border-radius: 14px;
+  padding: 18px 22px;
+  margin-bottom: 18px;
+}
+.panel-title {
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+.status-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 8px 0;
+  border-bottom: 1px solid #eef2f7;
+}
+.status-row:last-child {
+  border-bottom: none;
+}
+#checkList {
+  display: grid;
+  gap: 14px;
+}
+.check-card {
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid #d8dde4;
+  background: #fcfdff;
+}
+.check-card h3 {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+}
+.check-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+  color: #4d5763;
+}
+.check-badge {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+.badge-frequency {
+  background: #e8f1ff;
+  color: #084298;
+}
+.badge-normal {
+  background: #f0fdf4;
+  color: #0f5132;
+}
+.badge-special {
+  background: #fff4e5;
+  color: #8a5300;
+}
+.action-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+.action-button {
+  border: none;
+  border-radius: 999px;
+  padding: 9px 16px;
+  cursor: pointer;
+  font-weight: 700;
+}
+.action-ok { background: #0d6efd; color: white; }
+.action-ng { background: #dc3545; color: white; }
+.action-skip { background: #6c757d; color: white; }
+.action-reset { background: #fff3cd; color: #856404; border: 1px solid #ffc107; }
+#inspectorName { width: 100%; padding: 6px 10px; border: 1px solid #cbd5e1; border-radius: 8px; background: white; }
+.item-status {
+  margin-top: 10px;
+  font-weight: 700;
+}
+.item-status.ok { color: #0d6efd; }
+.item-status.ng { color: #dc3545; }
+.item-status.skip { color: #6c757d; }
+.app-message {
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #fff4cc;
+  color: #665800;
+}
+  .file-loader {
+    margin-top: 16px;
+    padding: 14px;
+    border-radius: 10px;
+    background: #f7f9fc;
+    border: 1px solid #d8dde4;
+  }
+  .file-loader label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+  .file-loader input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: white;
+  }
+  .inspector-row input,
+  .item-note-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: white;
+  }
+  .completion-panel {
+    margin-top: 20px;
+    text-align: center;
+  }
+  .completion-message {
+    margin-bottom: 12px;
+    font-weight: 700;
+    color: #0f5132;
+  }
+  .hidden { display: none; }
+
+.finished-screen {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.finished-screen.hidden {
+  display: none;
+}
+.finished-box {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 48px 40px;
+  text-align: center;
+  max-width: 480px;
+  width: 90%;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+}
+.finished-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0f5132;
+  margin-bottom: 16px;
+}
+.finished-message {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 28px;
+}
+.finished-summary {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.sum-ok { color: #0d6efd; }
+.sum-ng { color: #dc3545; }
+.sum-skip { color: #6c757d; }
+.finished-meta {
+  color: #666;
+  font-size: 0.9rem;
+}
