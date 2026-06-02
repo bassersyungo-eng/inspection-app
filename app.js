@@ -319,17 +319,18 @@ async function registerResult(deviceId, item, result, deviceName, note = '') {
   const records = loadRecords();
   const today = todayDate();
   const newRecord = {
-    record_id:  `${item.item_id}-${today}-${Date.now()}`,
-    item_id:    item.item_id,
-    item_name:  item.item_name,
-    category:   item.category,
-    device_id:  deviceId,
-    check_date: today,
-    task_type:  item.task_type,
+    record_id:   `${item.item_id}-${today}-${Date.now()}`,
+    item_id:     item.item_id,
+    item_name:   item.item_name,
+    category:    item.category,
+    device_id:   deviceId,
+    device_name: deviceName,
+    check_date:  today,
+    task_type:   item.task_type,
     result,
-    inspector:  dom.inspectorName.value.trim() || '未設定',
-    memo:       note || '',
-    is_special: item.special_type !== 'normal'
+    inspector:   dom.inspectorName.value.trim() || '未設定',
+    memo:        note || '',
+    is_special:  item.special_type !== 'normal'
   };
 
   // メモリをすぐ更新して再描画（楽観的更新）
