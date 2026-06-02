@@ -319,9 +319,11 @@ async function registerResult(deviceId, item, result, deviceName, note = '') {
   const records = loadRecords();
   const today = todayDate();
   const newRecord = {
-    record_id: `${item.item_id}-${today}-${Date.now()}`,
-    item_id:   item.item_id,
-    device_id: deviceId,
+    record_id:  `${item.item_id}-${today}-${Date.now()}`,
+    item_id:    item.item_id,
+    item_name:  item.item_name,
+    category:   item.category,
+    device_id:  deviceId,
     check_date: today,
     task_type:  item.task_type,
     result,
